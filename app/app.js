@@ -1,14 +1,14 @@
 define([
     'angular',
     'router',
-    './src/home/loader',
     './src/map_Service/loader',
+    './src/home/loader',
     './src/dashboard/loader'
 ], function (ng,$stateProvider) {
     'use strict';
-     ng.module('app', ['app.home','ui.router'])
+     ng.module('app', ['app.home','app.dashboard','ui.router'])
 
-     	.config(function($stateProvider){
+     	.config(function($stateProvider,$urlRouterProvider){
 
 	 		$stateProvider.state('contacts', {
 	 		  url:'/contacts',
@@ -16,10 +16,12 @@ define([
 			  controller:'homeController'	
 			})
 
-            $stateProvider.state('map',{
-                url:'/map',
-                template:'<div id="map_canvas" style="width:100%; height:100%"></div>',
+            $stateProvider.state('index',{
+                url:'/index',
+                template:'<button type="button" ng-click="mapRender()">Click Me!</button><div id="map_canvas" style="width:100%; height:100%"></div>',
                 controller:'dashboardController'
             })
+
+            $urlRouterProvider.when('','index');
      	});
 });

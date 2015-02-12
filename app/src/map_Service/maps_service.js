@@ -1,17 +1,19 @@
-define(['./module'],
-	function(mapService){
+define(['angular','./module'],
+	function(ng, module){
 		'use strict';
-    	 mapService.factory('mapService', function() {
-    		return {
-    			init:function(){
-    				var mapOptions = {
-          				center: new google.maps.LatLng(-34.397, 150.644),
-          				zoom: 8,
-          				mapTypeId: google.maps.MapTypeId.ROADMAP
-        			};
-        			var map = new google.maps.Map(document.getElementById("map_canvas"),
-            		mapOptions);
-    			}
-    		}
+    	 module.factory('mapService', function() {
+        var service ={}
+
+        service.init = function(){
+          var mapOptions = {
+                  center: new google.maps.LatLng(-34.397, 150.644),
+                  zoom: 8,
+                  mapTypeId: google.maps.MapTypeId.ROADMAP
+              };
+              var map = new google.maps.Map(document.getElementById("map_canvas"),
+                mapOptions);
+        }
+
+        return service;
 		});
 	});
