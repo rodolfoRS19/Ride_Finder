@@ -2,18 +2,12 @@
 <html>
   <head>
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-    <style type="text/css">
-      html { height: 100% }
-      body { height: 100%; margin: 0; padding: 0 }
-      #map_canvas { height: 100% }
-    </style>
-    <script type="text/javascript"
-      src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCng_EZoitm87Jv_kvVLRMLv7M44muN9zY&sensor=FALSE">
-    </script>
-     <script data-main="app/main" src="app/libs/vendor/js/require_plugins/require.js"></script>
+    <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyCng_EZoitm87Jv_kvVLRMLv7M44muN9zY&sensor=FALSE"></script>
+    <script data-main="app/main" src="app/libs/vendor/js/require_plugins/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="app/libs/common/css/app.loader.css">
   </head>
   <body>
-    <div ui-view></div>
-    <div id="map_canvas" style="width:100%; height:100%"></div>
+    <div ui-view id= "app_view">
+    </div>
   </body>
 </html>
